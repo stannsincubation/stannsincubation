@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SAIF Incubation Foundation - Editorial Ivory Theme */
+
+@layer base {
+  :root {
+    /* Ivory Editorial Background (#FDFBF7) */
+    --background: 40 43% 98%;
+    /* Dark Navy Text (#0F1E36) */
+    --foreground: 216 56% 14%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 216 56% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 56% 14%;
+
+    /* Deep Navy Primary Colors */
+    --primary: 216 56% 14%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm Gold Accent */
+    --secondary: 35 46% 57%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 35 46% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 216 56% 14%;
+
+    --radius: 0.75rem;
+
+    /* Custom SAIF Editorial Colors */
+    --saif-blue: 216 56% 14%;
+    --saif-blue-dark: 216 60% 10%;
+    --saif-purple: 35 46% 57%;
+    --saif-cyan: 35 50% 65%;
+    --saif-gradient-start: 216 56% 14%;
+    --saif-gradient-end: 35 46% 57%;
+
+    --sidebar-background: 40 43% 98%;
+    --sidebar-foreground: 216 56% 14%;
+    --sidebar-primary: 216 56% 14%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 216 56% 14%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 216 56% 14%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 83% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --saif-blue: 217 91% 60%;
+    --saif-blue-dark: 222 47% 30%;
+    --saif-purple: 262 83% 65%;
+    --saif-cyan: 190 95% 50%;
+    --saif-gradient-start: 217 91% 60%;
+    --saif-gradient-end: 262 83% 65%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-card/80 border border-border/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Editorial Ivory Theme Utilities */
+  .editorial-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAD9C0;
+    box-shadow: 0 4px 20px -2px rgba(15, 30, 54, 0.05);
+  }
+
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, #C49A62 0%, rgba(196, 154, 98, 0.2) 100%);
+  }
+
+  .animate-slide-logos {
+    animation: slide-logos 30s linear infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slide-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+  }
+}
